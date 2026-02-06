@@ -33,25 +33,97 @@
     </div>
     
     <h1>Privacy Policy</h1>
-    <p><strong>App Name:</strong> com.kianhamidi.shiftexporter</p>
+    <p><strong>App Name:</strong> Shift Exporter (com.kianhamidi.shiftexporter)</p>
     <p><strong>Last Updated:</strong> February 6, 2026</p>
     
-    <h2>Information Collection and Use</h2>
-    <p>This application accesses your Google account data solely for the purpose of exporting shift information. We do not store, share, or sell your personal information.</p>
+    <h2>Overview</h2>
+    <p>Shift Exporter is committed to protecting your privacy. This Privacy Policy explains how we handle your data when you use our Android application to convert work schedules from Excel files into Google Calendar events.</p>
     
-    <h2>Data Access</h2>
-    <p>The application may request access to your Google Calendar or other Google services to read and export shift data. All data processing happens locally on your device.</p>
+    <h2>Information Collection and Use</h2>
+    <p>Our application accesses and processes the following information:</p>
+    <ul>
+        <li><strong>Excel Schedule Files:</strong> You upload .xlsx files containing your work schedule. These files are processed locally on your device only.</li>
+        <li><strong>Google Account Information:</strong> We use Google Sign-In to authenticate your identity and obtain permission to access your Google Calendar.</li>
+        <li><strong>Google Calendar Access:</strong> We request permission to create calendar events in your Google Calendar.</li>
+    </ul>
+    <p><strong>We do not store, share, or sell any of your personal information.</strong></p>
+    
+    <h2>Google Calendar API Usage</h2>
+    <p>This application uses the Google Calendar API specifically to:</p>
+    <ul>
+        <li>Create new calendar events for your work shifts</li>
+        <li>Add event details including shift title ("Werk Gollem"), start/end times, and descriptions (role and colleague information)</li>
+    </ul>
+    <p><strong>We do NOT:</strong></p>
+    <ul>
+        <li>Read, access, or view your existing calendar events</li>
+        <li>Modify or delete your existing calendar events</li>
+        <li>Access any other Google services beyond Calendar event creation</li>
+        <li>Share your calendar data with any third parties</li>
+    </ul>
+    
+    <h2>Data Processing</h2>
+    <p>All data processing occurs locally on your Android device:</p>
+    <ul>
+        <li>Excel files are parsed entirely on your device</li>
+        <li>Shift information is extracted and formatted on your device</li>
+        <li>Calendar events are created directly from your device to Google Calendar</li>
+        <li>No intermediate servers are used to process or store your schedule data</li>
+    </ul>
     
     <h2>Data Storage</h2>
-    <p>We do not store any of your personal data on our servers. All data remains on your device or within your Google account.</p>
+    <p><strong>We do not operate any servers that store your data.</strong> Specifically:</p>
+    <ul>
+        <li>Your Excel schedule files remain only on your device</li>
+        <li>We do not upload or transmit your schedule data to any external servers</li>
+        <li>Calendar events are stored solely in your Google Calendar (managed by Google)</li>
+        <li>Authentication tokens are managed by Firebase Authentication and Google</li>
+    </ul>
     
     <h2>Third-Party Services</h2>
-    <p>This application uses Google OAuth for authentication. Please review Google's Privacy Policy for information on how they handle your data.</p>
+    <p>This application uses the following third-party services:</p>
+    <ul>
+        <li><strong>Google OAuth 2.0:</strong> For secure authentication and authorization</li>
+        <li><strong>Firebase Authentication:</strong> To facilitate Google Sign-In</li>
+        <li><strong>Google Calendar API:</strong> To create calendar events</li>
+    </ul>
+    <p>These services are governed by their respective privacy policies:</p>
+    <ul>
+        <li><a href="https://policies.google.com/privacy" target="_blank">Google Privacy Policy</a></li>
+        <li><a href="https://firebase.google.com/support/privacy" target="_blank">Firebase Privacy Policy</a></li>
+    </ul>
+    
+    <h2>Data Sharing</h2>
+    <p>We do not share, sell, rent, or trade your personal information with third parties for their commercial purposes. The only data sharing that occurs is:</p>
+    <ul>
+        <li>Calendar events are sent directly from your device to Google Calendar using Google's API</li>
+        <li>Authentication is handled through Google's secure OAuth infrastructure</li>
+    </ul>
+    
+    <h2>Your Rights</h2>
+    <p>You have full control over your data:</p>
+    <ul>
+        <li>You can revoke the app's Google Calendar access at any time through your Google Account settings</li>
+        <li>You can delete any calendar events created by the app directly in Google Calendar</li>
+        <li>You can uninstall the app at any time, which removes all local data</li>
+    </ul>
+    
+    <h2>Security</h2>
+    <p>We take security seriously:</p>
+    <ul>
+        <li>All authentication is handled through Google's secure OAuth 2.0 protocol</li>
+        <li>No passwords or credentials are stored by our application</li>
+        <li>Data transmission to Google Calendar uses secure HTTPS connections</li>
+        <li>The app follows Android security best practices</li>
+    </ul>
+    
+    <h2>Children's Privacy</h2>
+    <p>This application is not intended for children under the age of 13. We do not knowingly collect personal information from children under 13.</p>
     
     <h2>Changes to This Privacy Policy</h2>
-    <p>We may update our Privacy Policy from time to time. We will notify you of any changes by posting the new Privacy Policy on this page.</p>
+    <p>We may update our Privacy Policy from time to time. We will notify you of any changes by posting the new Privacy Policy on this page and updating the "Last Updated" date. You are advised to review this Privacy Policy periodically for any changes.</p>
     
     <h2>Contact Us</h2>
-    <p>If you have any questions about this Privacy Policy, please contact us through our GitHub repository.</p>
+    <p>If you have any questions about this Privacy Policy or our data practices, please contact us through our GitHub repository at <a href="https://github.com/kianniek" target="_blank">github.com/kianniek</a>.</p>
 </body>
 </html>
