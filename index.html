@@ -3,39 +3,291 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>com.kianhamidi.shiftexporter</title>
+    <title>Shift Exporter - Convert Work Schedules to Google Calendar</title>
     <style>
         body {
-            font-family: Arial, sans-serif;
-            max-width: 800px;
-            margin: 0 auto;
-            padding: 20px;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f5f5f5;
             line-height: 1.6;
-        }
-        h1 {
             color: #333;
         }
+        .header {
+            background: linear-gradient(135deg, #1a73e8 0%, #4285f4 100%);
+            color: white;
+            padding: 60px 20px;
+            text-align: center;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        .header h1 {
+            margin: 0 0 10px 0;
+            font-size: 2.5em;
+            font-weight: 600;
+        }
+        .header .subtitle {
+            font-size: 1.2em;
+            opacity: 0.95;
+        }
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 40px 20px;
+            background-color: white;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+        }
+        .section {
+            margin-bottom: 40px;
+        }
+        h2 {
+            color: #1a73e8;
+            font-size: 1.8em;
+            margin-bottom: 15px;
+            border-bottom: 2px solid #e8eaed;
+            padding-bottom: 10px;
+        }
+        h3 {
+            color: #5f6368;
+            font-size: 1.3em;
+            margin-top: 25px;
+            margin-bottom: 10px;
+        }
+        .feature-list {
+            background-color: #f8f9fa;
+            padding: 20px;
+            border-radius: 8px;
+            border-left: 4px solid #1a73e8;
+        }
+        .feature-list ul {
+            margin: 10px 0;
+            padding-left: 20px;
+        }
+        .feature-list li {
+            margin: 8px 0;
+        }
+        .data-usage-box {
+            background-color: #e8f0fe;
+            padding: 20px;
+            border-radius: 8px;
+            border-left: 4px solid #1a73e8;
+            margin: 20px 0;
+        }
+        .data-usage-box h3 {
+            color: #1a73e8;
+            margin-top: 0;
+        }
+        .workflow-steps {
+            counter-reset: step-counter;
+            list-style: none;
+            padding: 0;
+        }
+        .workflow-steps li {
+            counter-increment: step-counter;
+            margin-bottom: 20px;
+            padding-left: 50px;
+            position: relative;
+        }
+        .workflow-steps li::before {
+            content: counter(step-counter);
+            position: absolute;
+            left: 0;
+            top: 0;
+            background-color: #1a73e8;
+            color: white;
+            width: 35px;
+            height: 35px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+        }
         .links {
-            margin-top: 30px;
+            margin-top: 40px;
+            padding: 30px;
+            background-color: #f8f9fa;
+            border-radius: 8px;
+            text-align: center;
         }
         .links a {
             display: inline-block;
-            margin-right: 20px;
-            color: #1a73e8;
+            margin: 10px 15px;
+            padding: 12px 30px;
+            background-color: #1a73e8;
+            color: white;
             text-decoration: none;
+            border-radius: 4px;
+            font-weight: 500;
+            transition: background-color 0.3s;
         }
         .links a:hover {
-            text-decoration: underline;
+            background-color: #1557b0;
+        }
+        .technical-details {
+            background-color: #f8f9fa;
+            padding: 15px;
+            border-radius: 4px;
+            font-family: 'Courier New', monospace;
+            font-size: 0.9em;
+            margin: 10px 0;
+        }
+        .app-id {
+            color: #5f6368;
+            font-size: 0.9em;
+            text-align: center;
+            margin-top: 40px;
+            padding-top: 20px;
+            border-top: 1px solid #e8eaed;
         }
     </style>
 </head>
 <body>
-    <h1>com.kianhamidi.shiftexporter</h1>
-    <p>Welcome to the home page for com.kianhamidi.shiftexporter application.</p>
-    
-    <div class="links">
-        <a href="privacy-policy.html">Privacy Policy</a>
-        <a href="terms-of-service.html">Terms of Service</a>
+    <div class="header">
+        <h1>Shift Exporter</h1>
+        <p class="subtitle">Effortlessly convert your work schedules to Google Calendar</p>
+    </div>
+
+    <div class="container">
+        <div class="section">
+            <h2>About the App</h2>
+            <p>
+                Shift Exporter is an Android application designed to simplify your work schedule management. 
+                Built with modern Kotlin and Jetpack Compose, the app seamlessly converts Excel spreadsheet 
+                (.xlsx) work schedules into Google Calendar events, ensuring you never miss a shift.
+            </p>
+        </div>
+
+        <div class="section">
+            <h2>Key Features</h2>
+            <div class="feature-list">
+                <ul>
+                    <li><strong>Excel Schedule Import:</strong> Upload your work schedule directly from .xlsx files</li>
+                    <li><strong>Google Calendar Integration:</strong> Automatic sync with your Google Calendar</li>
+                    <li><strong>Smart Schedule Parsing:</strong> Intelligent recognition of shift patterns and types</li>
+                    <li><strong>Role Detection:</strong> Automatically identifies your role (Opener, Sluiter, etc.) based on shift timing</li>
+                    <li><strong>Colleague Tracking:</strong> See who's working with you and their schedules</li>
+                    <li><strong>Batch Processing:</strong> Preview all shifts before syncing with a single button</li>
+                    <li><strong>Professional Design:</strong> Clean, modern interface with blue and light gray color scheme</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>How It Works</h2>
+            <ol class="workflow-steps">
+                <li>
+                    <strong>Sign In with Google</strong><br>
+                    Authenticate securely using your Google account to enable Calendar access
+                </li>
+                <li>
+                    <strong>Upload Your Schedule</strong><br>
+                    Select and upload your work schedule Excel file (.xlsx format)
+                </li>
+                <li>
+                    <strong>Automatic Parsing</strong><br>
+                    The app scans for your shifts and intelligently processes schedule details
+                </li>
+                <li>
+                    <strong>Preview & Verify</strong><br>
+                    Review all detected shifts with dates, times, and calculated roles
+                </li>
+                <li>
+                    <strong>Sync to Calendar</strong><br>
+                    One-click synchronization adds all shifts to your Google Calendar
+                </li>
+            </ol>
+        </div>
+
+        <div class="section">
+            <h2>Schedule Processing Details</h2>
+            <p>The app uses sophisticated logic to accurately convert your shifts:</p>
+            
+            <h3>Shift Recognition</h3>
+            <div class="feature-list">
+                <ul>
+                    <li>Searches for the name "Mahnoy" in the Excel file to identify your shifts</li>
+                    <li>All events are titled "Werk Gollem" for easy identification in your calendar</li>
+                    <li>Start times are extracted directly from your schedule</li>
+                </ul>
+            </div>
+
+            <h3>Smart End Time Calculation</h3>
+            <div class="feature-list">
+                <ul>
+                    <li><strong>Flex Shifts:</strong> Automatically set to end at 23:59</li>
+                    <li><strong>Closing Shifts ("sluit"):</strong>
+                        <ul>
+                            <li>Monday-Thursday & Sunday: Ends at 02:00 (next day)</li>
+                            <li>Friday & Saturday: Ends at 04:00 (next day)</li>
+                        </ul>
+                    </li>
+                    <li><strong>Regular Shifts:</strong> Use the time specified in the schedule</li>
+                </ul>
+            </div>
+
+            <h3>Role Assignment</h3>
+            <div class="feature-list">
+                <ul>
+                    <li><strong>Opener:</strong> Assigned if you have the earliest start time that day</li>
+                    <li><strong>Sluiter:</strong> Assigned for closing shifts where you're last to leave</li>
+                    <li><strong>Eerste aanwezig:</strong> Indicates your relative arrival order</li>
+                </ul>
+            </div>
+
+            <h3>Event Details</h3>
+            <p>
+                Each calendar event includes your role and a complete list of all colleagues working that day, 
+                along with their shift times, displayed in an easy-to-read format with line breaks between entries.
+            </p>
+        </div>
+
+        <div class="section">
+            <h2>Data Usage & Privacy</h2>
+            <div class="data-usage-box">
+                <h3>Why We Request Google Calendar Access</h3>
+                <p>
+                    This app requests access to your Google Calendar for one specific purpose: 
+                    <strong>to create calendar events for your work shifts</strong>.
+                </p>
+                <p><strong>What we access:</strong></p>
+                <ul>
+                    <li>Permission to add events to your Google Calendar</li>
+                    <li>Your Google account authentication (via Google Sign-In)</li>
+                </ul>
+                <p><strong>What we DO NOT do:</strong></p>
+                <ul>
+                    <li>We do not read your existing calendar events</li>
+                    <li>We do not store your schedule data on external servers</li>
+                    <li>We do not share your information with third parties</li>
+                    <li>We do not sell or monetize your data</li>
+                </ul>
+                <p>
+                    <strong>All processing happens locally on your Android device.</strong> Your Excel files and 
+                    schedule information are processed entirely on your phone using Firebase for authentication only.
+                </p>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>Technical Information</h2>
+            <div class="technical-details">
+                <strong>Platform:</strong> Android<br>
+                <strong>Technology Stack:</strong> Kotlin, Jetpack Compose, Firebase Authentication<br>
+                <strong>APIs Used:</strong> Google Calendar API (for event creation only)<br>
+                <strong>Data Storage:</strong> Local device only, no cloud storage<br>
+                <strong>Authentication:</strong> Google OAuth 2.0 via Firebase
+            </div>
+        </div>
+
+        <div class="links">
+            <h2 style="margin-top: 0; color: #333;">Important Links</h2>
+            <a href="privacy-policy.html">Privacy Policy</a>
+            <a href="terms-of-service.html">Terms of Service</a>
+        </div>
+
+        <div class="app-id">
+            <strong>Application ID:</strong> com.kianhamidi.shiftexporter
+        </div>
     </div>
 </body>
 </html>
